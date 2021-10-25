@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<style>
+    .updateBtn {
+
+        text-align: center;
+    }
+</style>
+<h1 style="text-align: center;">Delete Donor</h1>
+<hr>
+<div id="info" class=" container">
+ 
+<p>Are you sure you want to delete donor?</p>
+<form action="{% url 'donordelete' donor_info.id %}" method="post">
+    {% csrf_token %}
+
+    <a class="btn btn-primary" href="{% url 'donorinfo' donor_info.id %}">Cancel</a>
+    <input class="btn btn-outline-danger" type="submit" value="Confirm">
+</form>
+
+</div>
+
+
+
+{% endblock %}

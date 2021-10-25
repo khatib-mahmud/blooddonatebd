@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<style>
+    .updateBtn {
+
+        text-align: center;
+    }
+</style>
+<h4 style="text-align: center;">Personal Information</h4>
+<hr>
+<div id="info" class=" container">
+    <div class="left">
+        {% if avail == "Not Available" %}
+        <h4 style="background-color: red; width: 300px;">Name: {{donor_info.name}}</h4>
+        {% else %}
+        <h4>Name: {{donor_info.name}}</h4>
+        {% endif %}
+        <h4>email:</h4>{{donor_info.email}}
+        <h4>bloodgroup:</h4> {{donor_info.bloodgroup}}
+        <h4>location: </h4> {{donor_info.location}}
+        <h4>phone: </h4> {{donor_info.phone}}
+        <h4>lastdonation: </h4> {{donor_info.lastdonationdate}}
+    </div>
+
+    <div class="right">
+        <h4>Duration:</h4>{{ld}} days
+        <h4>Status:</h4>{{avail}}
+    </div>
+
+
+</div>
+<br>
+{% if user.is_authenticated %}
+
+<div class="updateBtn">
+    
+    <a class="btn btn-primary" href="{% url 'donorupdate' donor_info.id %}">Update Info</a>
+    
+    {% if request.user.is_staff %}
+    <a class="btn btn-warning" href="{% url 'donordelete' donor_info.id %}">Delete</a>
+    {% endif %}
+</div>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,77 @@
+#filterbar{
+    background-color: rgb(168, 214, 201);
+}
+h1,h2,h3,h4,h5,h6{
+    color: rgb(20, 4, 110);
+}
+
+.card-header{
+    background-color: rgb(224, 236, 250);
+}
+.card-body{
+    background-color: rgb(236, 241, 245);
+}
+
+.name{
+    text-decoration: none;
+    color: rgb(227, 232, 236);
+    background-color: rgb(83, 83, 83);
+    padding: 6px;
+    margin: 3px;
+
+    border-radius: 15%;
+    transition: .5s;
+}
+.name:hover{
+    background-color: rgb(194, 240, 221);
+    color: black;
+}
+#info{
+    background-color: rgb(209, 240, 230);
+    border-radius: 5px;
+    padding: 10px;
+    width: 50rem;
+    margin-bottom: 2px;
+    box-shadow: 3px 3px 15px;
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-areas: 
+        'left right'
+    ;
+}
+
+.tablecontent{
+    display: grid;
+    
+    
+
+}
+.status{
+    display: inline-block;
+    columns: 1;
+    -webkit-columns: 1;
+    -moz-columns: 1;
+}
+
+#message{
+    background-color: rgb(228, 226, 130);
+    color: rgb(19, 19, 19);
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.upmessage{
+    background-color: rgb(130, 204, 121);
+    color: rgb(19, 19, 19);
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-top: 15px;
+    text-align: center;
+    align-content: center;
+    height: 30px;
+    
+
+}
+

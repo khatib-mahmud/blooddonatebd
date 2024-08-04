@@ -102,14 +102,16 @@ def donorupdate(request,donor_id):
 def donorinfo(request,donor_id):
     donor_info = Donor.objects.get(pk=donor_id)
     today = date.today()
-    ld = today - donor_info.lastdonationdate
+    # ld = today - donor_info.lastdonationdate
 
-    if ld.days<90:
-        avail = "Not Available"
-    else:
-        avail = "Available"
+    # if ld.days<90:
+    #     avail = "Not Available"
+    # else:
+    #     avail = "Available"
     
-    return render(request, 'donorinfo.html', {'donor_info':donor_info ,'ld':ld.days ,'today':today ,'avail':avail , 'title':'Donor Infromations'})
+
+
+    return render(request, 'donorinfo.html', {'donor_info':donor_info,'today':today , 'title':'Donor Infromations'})
 
 
 @allowed_user(allowed_roles=['admin'])

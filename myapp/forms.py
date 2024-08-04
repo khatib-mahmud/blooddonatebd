@@ -17,7 +17,7 @@ class DonorForm(forms.ModelForm):
         required=False,
         widget =forms.TextInput(
             attrs={
-                'class':'form-control', 'placeholder':'Phone Number','pattern':'[0-9]*','title':'Contain only digits!'
+                'class':'form-control', 'placeholder':'Phone Number'
                 }
             )
         )
@@ -39,12 +39,10 @@ class DonorForm(forms.ModelForm):
             'bloodgroup': forms.Select(attrs={'class':'form-group' , 'placeholder':'Blood Group'})
         }
     def clean_phone(self):
-        cleaned_data = super().clean()
         phone = self.cleaned_data.get('phone')
-        if phone<8:
+        if int(phone)<8:
             raise forms.ValidationError("No futre date")     
-        else:
-            return phone
+        return phone
 
 
 class CreateUserForm(UserCreationForm):

@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{% static 'main.css' %}">
   </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark  fixed-top navigation">
         <div class="container-fluid">
           <a class="navbar-brand" href="{% url 'home' %}">DonateBD</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,20 +28,20 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                <a style="color: black;" class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'donorlist' %}">DonorList</a>
+                <a style="color: black;" class="nav-link" aria-current="page" href="{% url 'donorlist' %}">Donor List</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'donorform' %}">Be_a_Donor</a>
+                <a style="color: black;" class="nav-link" aria-current="page" href="{% url 'donorform' %}">Be a Donor</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'aboutus' %}">AboutUs</a>
+                <a style="color: black;" class="nav-link" aria-current="page" href="{% url 'aboutus' %}">About Us</a>
               </li>
              </ul>
              {% if user.is_authenticated %}
-             <span style="color: aliceblue;" class=" m-2">Hello, {{request.user}}</span>
+             <span style="color: aliceblue;" class=" m-2">Hello, <a id="username" class="btn btn-info" href="#">{{request.user}}</a></span>
              <span><a class="btn btn-danger" href="{% url 'logout' %}">Logout</a></span>
              {% else %}
              <a class="btn btn-outline-success" href="{% url 'register' %}">Registration</a>
@@ -50,9 +50,11 @@
           </div>
         </div>
       </nav>
-{% block body %}
+<div class="mainbody" style="margin-top:4rem;">
+  {% block body %}
 
 
 {% endblock %}
+</div>
 </body>
 </html>

@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp',
     'django_filters',
-    'widget_tweaks',
+    # 'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -67,12 +67,15 @@ WSGI_APPLICATION = 'BloodDonation.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'blooddatabase',
-        'USER':'postgres',
-        'PASSWORD':'1234',
-        'HOST':'localhost',
-        'PORT':'5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME':  str(os.path.join(BASE_DIR, "db.sqlite3")),
+        
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'blooddatabase',
+        # 'USER':'postgres',
+        # 'PASSWORD':'1234',
+        # 'HOST':'localhost',
+        # 'PORT':'5432',
     }
 }
 

@@ -13,7 +13,8 @@
 			margin: 0;
 			padding: 0;
 			height: 100%;
-			background: linear-gradient(140deg,#2980b9, #8e44ad) !important;
+			background:  #8493d8;
+		
 		}
 		.user_card {
 			width: 350px;
@@ -25,9 +26,9 @@
 			justify-content: center;
 			flex-direction: column;
 			padding: 10px;
-			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			box-shadow: 3px 3px 8px #3b3b3b,
+                		-6px -6px 8px #b7c1f7;
+			
 			border-radius: 5px;
 
 		}
@@ -41,11 +42,16 @@
 		}
 		.login_btn {
 			width: 100%;
-			
 			background: linear-gradient(#2980b9, #8e44ad) !important;
 			color: white !important;
+			transition: .3s;
 		}
-		.login_btn:focus {
+
+		.login_btn:hover{
+			background: tomato ;
+		}
+
+		.login_btn:active {
 			box-shadow: none !important;
 			outline: 0px !important;
 		}
@@ -53,8 +59,8 @@
 			padding: 0 2rem;
 		}
 		.input-group-text {
-			background: #f7ba5b !important;
-			color: white !important;
+		
+			color: rgb(83, 69, 69) !important;
 			border: 0 !important;
 			border-radius: 0.25rem 0 0 0.25rem !important;
 		}
@@ -63,7 +69,11 @@
 			box-shadow: none !important;
 			outline: 0px !important;
 		}
-
+		.field{
+			background: #8493d8;
+			box-shadow:inset 2px 2px 4px  #5e606b ,
+                	  inset -2px -2px 3px #d3dadf;
+		}
 	</style>
 
 </head>
@@ -78,19 +88,19 @@
 
 					<form method="POST" action="">
                         {% csrf_token %}
-						<div class="input-group mb-3">
+						<div class="input-group mb-3 ">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
         
-                            <input class="form-control" type="text" name="username" placeholder="Username">
+                            <input class="form-control field" type="text" name="username" placeholder="Username" >
 						</div>
 						
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="password" placeholder="Password" class="form-control">
+							<input type="password" name="password" placeholder="Password" class="form-control field">
         
 						</div>
 

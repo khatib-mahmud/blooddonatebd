@@ -12,8 +12,8 @@ name_regex = RegexValidator(r'^[a-zA-Z|\s]+$',"no numeric")
 class Donor(models.Model):
     
     group = [
-       ('A+','A+'),
-       ('A-' , 'A-'),
+        ('A+','A+'),
+        ('A-','A-'),
         ('B+','B+'),
         ('B-','B-'),
         ('Ab+','Ab+'),
@@ -26,7 +26,7 @@ class Donor(models.Model):
     location = models.CharField(max_length=50,blank=False)
     phone = models.CharField(blank=False, max_length=11)
         
-    lastdonationdate = models.DateField(auto_now=False, auto_now_add=False)
+    lastdonationdate = models.DateField(auto_now=False, auto_now_add=False, blank= True, null= True)
       
     bloodgroup = models.CharField( max_length=4 ,choices=group)
 

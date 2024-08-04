@@ -20,7 +20,11 @@
         <h4>bloodgroup:</h4> {{donor_info.bloodgroup}}
         <h4>location: </h4> {{donor_info.location}}
         <h4>phone: </h4> {{donor_info.phone}}
+        {% if donor_info.lastdonationdate %}
         <h4>lastdonation: </h4> {{donor_info.lastdonationdate}}
+        {% else %}
+        <h4>lastdonation: NEW DONOR</h4>
+        {% endif %}
     </div>
 
     <div class="right">
